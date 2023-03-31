@@ -1,7 +1,7 @@
 import { BrowserRouter as Router,Routes, Route, Link } from "react-router-dom";
 import {Switch} from 'react-router'
 import { QueryClientProvider, QueryClient } from "react-query";
-// import { ReactQueryDevtools } from "react-query/devtools";
+import { ReactQueryDevtools } from "react-query/devtools";
 import "./App.css";
 import HomePage from "./components/Home.page";
 import RQSuperheroesPage from "./components/RQSuperheroes.page";
@@ -31,6 +31,7 @@ function App() {
           </nav>
           <Routes>
           <Route path="/super-heroes" element={<SuperheroesPage />} />
+          <Route path="/" element={<HomePage />} />
               
        
             {/* <Route path="/rq-super-heores/:heroId" element={ <RQSuperheroesPage />} /> */}
@@ -44,6 +45,7 @@ function App() {
          
         </div>
       </Router>
+      <ReactQueryDevtools initialIsOpen={false} position='bottom-right' />
     </QueryClientProvider>
   );
 }
